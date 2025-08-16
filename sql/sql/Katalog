@@ -1,1 +1,106 @@
+CREATE TABLE produk_kosmetik (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    kategori VARCHAR(50),
+    nama_produk VARCHAR(100),
+    harga INT,
+    undertone VARCHAR(50)
+);
 
+INSERT INTO produk_kosmetik (kategori, nama_produk, harga, undertone) VALUES
+-- Lip Matte
+('Lip Matte', 'Crimson Flame', 49000, 'cool'),
+('Lip Matte', 'Dusty Rose', 45000, 'medium'),
+('Lip Matte', 'Maple Syrup', 50000, 'tan'),
+('Lip Matte', 'Muted Coral', 42000, 'cool'),
+('Lip Matte', 'Berry Rush', 38000, 'olive'),
+('Lip Matte', 'Cinnamon Kiss', 35000, 'medium'),
+('Lip Matte', 'Burnt Caramel', 48000, 'tan'),
+('Lip Matte', 'Rose Clay', 40000, 'cool'),
+('Lip Matte', 'Brick Nude', 43000, 'olive'),
+('Lip Matte', 'Wine Plum', 46000, 'tan'),
+
+-- Lip Gloss
+('Lip Gloss', 'Crystal Shine', 39000, 'universal'),
+
+-- Lip Liner
+('Lip Liner', 'Redwood', 27000, 'cool/tan'),
+('Lip Liner', 'Blush Nude', 25000, 'medium'),
+
+-- Lip Tint
+('Lip Tint', 'Cherry Bomb', 32000, 'cool'),
+('Lip Tint', 'Sunset Orange', 35000, 'tan'),
+('Lip Tint', 'Pink Soda', 30000, 'medium'),
+('Lip Tint', 'Berry Splash', 33000, 'olive'),
+('Lip Tint', 'Grape Crush', 31000, 'cool'),
+('Lip Tint', 'Peach Breeze', 29000, 'medium'),
+('Lip Tint', 'Ruby Drop', 34000, 'tan'),
+
+-- Cushion Matte
+('Cushion Matte', 'Porcelain Cool', 55000, 'cool'),
+('Cushion Matte', 'Beige Neutral', 62000, 'medium'),
+('Cushion Matte', 'Warm Tan', 70000, 'tan'),
+('Cushion Matte', 'Golden Olive', 73000, 'olive'),
+('Cushion Matte', 'Espresso', 78000, 'deep/tan'),
+
+-- Loose Powder
+('Loose Powder', 'Translucent Light', 50000, 'cool'),
+('Loose Powder', 'Soft Beige', 55000, 'medium'),
+('Loose Powder', 'Warm Honey', 60000, 'tan/olive'),
+
+-- Cushion Glow
+('Cushion Glow', 'Ivory Radiance', 50000, 'cool'),
+('Cushion Glow', 'Nude Glow', 58000, 'medium'),
+('Cushion Glow', 'Sunlit Tan', 68000, 'tan'),
+('Cushion Glow', 'Amber Olive', 75000, 'olive'),
+('Cushion Glow', 'Deep Bronze', 78000, 'deep skin'),
+
+-- Setting Spray
+('Setting Spray', 'Stay Matte All Day', 38000, 'matte'),
+('Setting Spray', 'Dew Boost Mist', 38000, 'glow'),
+
+-- Blush
+('Blush', 'Peachy Pop', 30000, 'cool'),
+('Blush', 'Rosy Bloom', 28000, 'medium'),
+('Blush', 'Terracotta Dust', 43000, 'tan/olive'),
+
+-- Mascara
+('Mascara', 'Length Drama', 80000, 'long lashes'),
+('Mascara', 'Mega Volume', 80000, 'volume'),
+
+-- Eyebrow Pencil
+('Eyebrow Pencil', 'Dark Brown', 15000, 'brown'),
+('Eyebrow Pencil', 'Soft Black', 15000, 'black');
+
+
+-- Lihat semua produk
+SELECT * FROM produk_kosmetik;
+
+-- Produk dengan undertone tan
+SELECT * FROM produk_kosmetik WHERE undertone LIKE '%tan%';
+
+-- Harga di bawah 40.000
+SELECT * FROM produk_kosmetik WHERE harga < 40000;
+
+-- Lihat semua Cushion Matte di bawah 70rb
+SELECT * FROM produk_kosmetik 
+WHERE kategori = 'Cushion Matte' AND harga < 70000;
+
+-- Filter semua produk dengan undertone olive
+SELECT * FROM produk_kosmetik 
+WHERE undertone LIKE '%olive%';
+
+-- Lihat kategori Loose Powder
+SELECT * FROM produk_kosmetik 
+WHERE kategori = 'Loose Powder';
+
+-- Cari semua produk kategori Cushion
+SELECT * FROM produk_kosmetik WHERE kategori LIKE '%Cushion%';
+
+-- Produk dengan harga di atas Rp60.000
+SELECT * FROM produk_kosmetik WHERE harga > 60000;
+
+-- Semua produk untuk undertone 'cool'
+SELECT * FROM produk_kosmetik WHERE undertone LIKE '%cool%';
+
+-- Tampilkan semua kategori yang unik
+SELECT DISTINCT kategori FROM produk_kosmetik;
