@@ -31,7 +31,7 @@ INSERT INTO categories (name) VALUES
 ('Cheek Products'),
 ('Eye Products');
 
--- Insert ke Products (contoh sebagian)
+-- Insert ke Products 
 -- Lip Matte (category_id = 1)
 INSERT INTO products (category_id, name, undertone) VALUES
 (1, 'Lip Matte - Crimson Flame', 'cool'),
